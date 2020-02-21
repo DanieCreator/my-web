@@ -1,0 +1,21 @@
+$color: #f7b733;
+.first {
+    .card {
+        height: 800px;
+        width: 100vw;
+        color: $color;
+        background-color: #1a2930;
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 58%);
+    }
+}
+
+.person {
+    background-color: green;
+    margin-top: 10px;
+}
+
+.form {
+    height: 200px;
+    width: 180px;
+    background-color: white;
+}

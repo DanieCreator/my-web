@@ -1,0 +1,29 @@
+.card {
+  width: 30vw;
+  height: 300px;
+  background-color: #4ABDAC;
+  margin: 5px;
+  margin-left: 5px;
+  border-radius: 6px;
+  border: 3px solid lightskyblue;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 3;
+}
+
+.card-title {
+  list-style: none;
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card-title h3 {
+  color: 0;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+/*# sourceMappingURL=about.css.map */

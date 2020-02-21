@@ -1,0 +1,93 @@
+body {
+  width: 100vw;
+  display: block;
+  overflow-x: visible;
+}
+
+footer {
+  margin-top: 10px;
+}
+
+footer #topsection {
+  color: white;
+  background-color: grey;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 150px;
+}
+
+footer #topsection h3 {
+  text-transform: capitalize;
+  margin-left: 40%;
+  margin-bottom: 10px;
+}
+
+footer #bottomsection {
+  color: blue;
+  background-color: black;
+  width: 100vw;
+  height: 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer #bottomsection h4 {
+  color: white;
+}
+
+footer #bottomsection a {
+  font-size: 30px;
+}
+
+footer #bottomsection a i {
+  color: grey;
+  width: 60px;
+  height: auto;
+  margin: 5px;
+}
+
+footer #bottomsection .navigation li a {
+  color: grey;
+}
+
+footer #bottomsection li {
+  color: grey;
+  list-style: none;
+  margin: 0px;
+  text-align: center;
+}
+
+footer #bottomsection li a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+footer #bottomsection p {
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+#cols {
+  color: blue;
+  text-align: center;
+  height: 800px;
+}
+
+#cols .col-4 {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=stlye.css.map */

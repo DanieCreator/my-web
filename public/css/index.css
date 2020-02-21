@@ -1,0 +1,20 @@
+.first .card {
+  height: 800px;
+  width: 100vw;
+  color: #f7b733;
+  background-color: #1a2930;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 58%);
+          clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 58%);
+}
+
+.person {
+  background-color: green;
+  margin-top: 10px;
+}
+
+.form {
+  height: 200px;
+  width: 180px;
+  background-color: white;
+}
+/*# sourceMappingURL=index.css.map */
