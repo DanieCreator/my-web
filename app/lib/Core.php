@@ -2,6 +2,7 @@
 class Core
 {
     protected $currentController = 'pages';
+
     protected $currentMethod = 'index';
     protected $params = [];
     public function __construct()
@@ -24,6 +25,14 @@ class Core
                 $this->currentMethod = $url[1];
                 //unset url[1]
                 unset($url[1]);
+            }
+        }
+        //check the third part of url
+        if (isset($url[2])) {
+            if (method_exists($this->currentController, $url[2])) {
+                $this->currentMethod = $url[2];
+                //unset url[1]
+                unset($url[2]);
             }
         }
         $this->params = $url ? array_values($url) : [];

@@ -17,6 +17,9 @@ class controller
     }
     public function view($view, $data = [])
     {
+
+        // $_SESSION['data'] = $data;
+
         //check for view files
         if (file_exists('../app/views/' . $view . '.php')) {
             require_once '../app/views/' . $view . '.php';

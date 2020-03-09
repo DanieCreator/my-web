@@ -12,3 +12,5 @@ define('APPROOT', dirname(dirname(__FILE__)));
 define('SITENAME', 'SESSIONS');
 //url root
 define('URLROOT', 'http://localhost/SESSIONS');
+//admin sitename
+define('ADMINSITENAME', 'STATION ADMIN');

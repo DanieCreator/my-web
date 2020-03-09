@@ -9,9 +9,12 @@ class users extends controller
     }
     public function register()
     {
+        $has_errors = false;
+
         //check for submit post
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // die('submitted');
+
+
             //process form
             $data = [
                 'fname' => htmlspecialchars($_POST['fname']),
@@ -27,42 +30,49 @@ class users extends controller
                 'Password_err' => '',
                 'Confirm_Password_err' => '',
             ];
+
             if (empty($data['fname'])) {
+                $has_errors = true;
                 $data['fname_err'] = 'please enter first name';
             }
             if (empty($data['lname'])) {
+                $has_errors = true;
                 $data['lname_err'] = 'please enter last name';
             }
             if (empty($data['Mobile'])) {
+                $has_errors = true;
                 $data['Mobile_err'] = 'please enter mobile number';
             }
 
             if (empty($data['email'])) {
+                $has_errors = true;
                 $data['email_err'] = 'Email must be filled';
             } else {
                 //check mail
                 if ($this->userModel->findUserEmail($data['email'])) {
+                    $has_errors = true;
                     $data['email_err'] = 'Email already taken';
                 }
             }
             if (empty($data['Password'])) {
+                $has_errors = true;
                 $data['Password_err'] = 'enter password';
             } elseif (strlen($data['Password']) < 8) {
+                $has_errors = true;
                 $data['Password_err'] = 'password must be atleast 8 characters long';
             }
 
             if (empty($data['Confirm_Password'])) {
+                $has_errors = true;
                 $data['Confirm_Password_err'] = 'confirm your password';
             } else {
                 if ($data['Confirm_Password'] != $data['Password']) {
+                    $has_errors = true;
                     $data['Confirm_Password_err'] = ' password don\'t match';
                 }
             }
             //make sure error are absent
-            if (
-                empty($data['fname_err']) && empty($data['lname_err']) && empty($data['Mobile_err']) &&
-                empty($data['email_err']) && empty($data['Password_err']) && empty($data['confirm_password_err'])
-            ) {
+            if (!$has_errors) {
 
                 $data['Password'] = password_hash($data['Password'], PASSWORD_DEFAULT);
 
@@ -129,6 +139,7 @@ class users extends controller
 
                 if ($loggedInUser) {
                     //create session
+                    $this->createUserSession($loggedInUser);
                 } else {
                     $data['Password_err'] = 'password incorrect';
                     $this->view('users/login', $data);
@@ -154,5 +165,22 @@ class users extends controller
             //loading view
             $this->view('users/login', $data);
         }
+    }
+    public function createUserSession($user)
+    {
+        $_SESSION['user_id'] = $user->user_key;
+        $_SESSION['user_email'] = $user->Email;
+        $_SESSION['user_name'] = $user->firstName;
+        redirect('posts/index');
+    }
+    public function logOut()
+    {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user_email']);
+        unset($_SESSION['user_name']);
+
+        session_destroy();
+
+        redirect('users/login');
     }
 }

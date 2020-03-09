@@ -14,8 +14,11 @@
 
 
 </head>
-<?php require_once APPROOT . '/views/includes/navbar.php' ?>
+<div class="row">
 
-<body>
+    <?php require_once APPROOT . '/views/includes/navbar.php' ?>
+</div>
+
+<body class="mt-5" data-spy="scroll" data-target=".navbar" data-offset="50">
     <main>
         <div class="container-fluid">

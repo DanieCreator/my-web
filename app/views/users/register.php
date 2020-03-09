@@ -15,17 +15,17 @@ require_once APPROOT . '/views/includes/header.php'; ?>
                     </div>
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" name="lname" class="form-control form-control-lg <?= (!empty($data['lname_err'])) ? ' is-invalid' : '' ?>">
+                        <input type="text" name="lname" value="<?= $data['lname'] ?>" class="form-control form-control-lg <?= (!empty($data['lname_err'])) ? ' is-invalid' : '' ?>">
                         <span class="invalid-feedback"><?= $data['lname_err']; ?></span>
                     </div>
                     <div class="form-group">
                         <label for="mobile">Mobile</label>
-                        <input type="mobile" name="mobile" class="form-control form-control-lg <?= (!empty($data['Mobile_err'])) ? ' is-invalid' : '' ?>">
+                        <input type="mobile" name="mobile" value="<?= $data['Mobile'] ?>" class="form-control form-control-lg <?= (!empty($data['Mobile_err'])) ? ' is-invalid' : '' ?>">
                         <span class="invalid-feedback"><?= $data['Mobile_err']; ?></span>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="mail" class="form-control form-control-lg <?= (!empty($data['email_err'])) ? ' is-invalid' : '' ?>">
+                        <input type="email" name="mail" value="<?= $data['email'] ?>" class="form-control form-control-lg <?= (!empty($data['email_err'])) ? ' is-invalid' : '' ?>">
                         <span class="invalid-feedback"><?= $data['email_err']; ?></span>
                     </div>
                     <div class="form-group">
